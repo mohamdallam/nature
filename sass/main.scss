@@ -1,3 +1,11 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
@@ -10,6 +18,7 @@
    10 / 16 = .625 
   .625 * 16 = 10 px
 */
+
 html {
   font-size: 62.5%;
 }
@@ -19,7 +28,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
 }
 
@@ -27,8 +36,8 @@ body {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
     ),
     url(../img/hero.jpg);
   background-size: cover;
@@ -50,13 +59,14 @@ body {
 .header__tex-box {
   position: absolute;
   left: 50%;
+
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -67,6 +77,7 @@ body {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
+
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -77,6 +88,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.7rem;
+
   animation-name: moveInright;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -104,8 +116,8 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-grey-dark;
 }
 
 .btn::after {
@@ -122,7 +134,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
@@ -141,9 +153,11 @@ body {
     opacity: 0;
     transform: translateY(-10rem);
   }
+
   80% {
     transform: translateX(1rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -155,9 +169,11 @@ body {
     opacity: 0;
     transform: translateY(10rem);
   }
+
   80% {
     transform: translateX(-1rem);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -169,6 +185,7 @@ body {
     opacity: 0;
     transform: translateY(3rem);
   }
+
   100% {
     opacity: 1;
     transform: translate(0);
